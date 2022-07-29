@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf8">
+		<title>COVID Contact Tracing</title>
+		<meta name="theme-color" content="#d86300">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="icon" type="image/png" href="images/KCAC_Logo.ico">
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+
+		<main>
+			<h1>KCAC COVID Contact Tracing <br>新冠防疫追踪</h1><br>
+      <h2>請填寫接觸追蹤表格</h2>
+      <br />
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSdYBv9OgUQRyAUb4A9DxQeL9p7Nmf8dKvIb33i12KbLnOf92A/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+
+
+
+      接觸追蹤表格
+        <legend for="1169854314">姓名</legend>
+ 
+            <input id="2006047815" type="text" name="entry.2006047815" class="form-control" required>
+     
+        电话号码
+
+            <input id="46202087" type="text" name="entry.46202087" class="form-control" required>
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="-7109514916006741604">
+    <input type="hidden" name="pageHistory" value="0">
+
+    <button class="btn btn-primary button" type="submit" value="Submit">Submit</button>
+</form>
+Information Collected is only for contact tracing <br>采集信息仅会用作接触追踪<br />
+  
+
+		</main>
+
+	</body>
+</div>
+<script>
+  var ua = navigator.userAgent.toLowerCase();
+  var isWeixin = ua.indexOf('micromessenger') == -1;
+  if (!isWeixin) {
+  window.location.href = "https://covid-prud.kcac.ca/webclient/wx.html"
+  }
+  </script>
+  <script>
+	if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+	  window.location = 'microsoft-edge:' + window.location;
+	  setTimeout(function() {
+		window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+	  }, 1);
+	}
+  </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+       <script>
+         window.onload = function() {
+           window.micAccessTool = new MicAccessTool({
+       
+             buttonPosition: 'right', // default is 'left'
+           });
+         }
+         $('#bootstrapForm').submit(function (event) {
+       event.preventDefault()
+       var extraData = {}
+       $('#bootstrapForm').ajaxSubmit({
+           data: extraData,
+           dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+           error: function () {
+               // Submit of form should be successful but JSONP callback will fail because Google Forms
+               // does not support it, so this is handled as a failure.
+               
+               //alert('Form Submitted. Thanks.')
+               window.location.href = "accept.html"
+               // You can also redirect the user to a custom thank-you page:
+               // window.location = 'http://www.mydomain.com/thankyoupage.html'
+           }
+       })
+   })
+       </script>
+</html>

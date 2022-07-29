@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf8">
+		<title>COVID Contact Tracing</title>
+		<meta name="theme-color" content="#d86300">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="icon" type="image/png" href="images/KCAC_Logo.ico">
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+
+		<main>
+			<h1>KCAC COVID Contact Tracing <br>新冠防疫追踪</h1><br>
+      
+      <h2>您参加的是哪个崇拜？</h2>如果您参加的是联合崇拜，请选择‘英文崇拜’<br>
+      <a href=".html" class="button_n"><button>中文崇拜</button>
+        <a href="reject.html" class="button_n"><button>English Service</button>
+          <a href="reject.html" class="button_n"><button>其他</button>
+    </div>
+
+     
+          <br /> 
+
+		</main>
+
+	</body>
+</div>
+<script>
+  var ua = navigator.userAgent.toLowerCase();
+  var isWeixin = ua.indexOf('micromessenger') == -1;
+  if (!isWeixin) {
+  window.location.href = "https://covid-prud.kcac.ca/webclient/wx.html"
+  }
+  </script>
+  <script>
+	if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+	  window.location = 'microsoft-edge:' + window.location;
+	  setTimeout(function() {
+		window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+	  }, 1);
+	}
+  </script>
+</html>
