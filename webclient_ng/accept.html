@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf8">
+		<title>COVID Contact Tracing</title>
+		<meta name="theme-color" content="#d86300">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="icon" type="image/png" href="https://www.cloudflare.com/favicon-128.png">
+		<link rel="stylesheet" href="index.css">
+	</head>
+	<body>
+
+		<main>
+			<b><h1>Welcome to KCAC<br>歡迎來到京士顿华人宣道会</h1></b>
+        <br />
+        <br />
+		
+        <h2>Thanks. 
+        <br>谢谢</h2><br> <hr><div id="weekofsec"></div></c>
+    
+				
+
+				<a href="index.html"><button>Start Over 重新開始</button></a>
+		</main>
+
+	</body>
+	<script>
+
+	 Date.prototype.getWeekNumber = function(){
+	var d = new Date(Date.UTC(this.getFullYear(), this.getMonth(), this.getDate()));
+	var dayNum = d.getUTCDay() || 7;
+	d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+	var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+	return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+  };
+  //change background colour according to week of the year
+  //document.write('The current ISO week number is ' + new Date().getWeekNumber() + '<hr>');
+  curWeek = new Date().getWeekNumber()
+  modWeek = curWeek % 5;
+  document.getElementById("weekofsec").innerText = 'This is the ' + new Date().getWeekNumber() + ' service of this year.';
+  //document.write(modWeek);
+  
+  function getCookie(cname) {
+	let name = cname + "=";
+	let decodedCookie = decodeURIComponent(document.cookie);
+	let ca = decodedCookie.split(';');
+	for(let i = 0; i <ca.length; i++) {
+	  let c = ca[i];
+	  while (c.charAt(0) == ' ') {
+		c = c.substring(1);
+	  }
+	  if (c.indexOf(name) == 0) {
+		return c.substring(name.length, c.length);
+	  }
+	}
+	return "";
+  }
+  let fillingWoYear = getCookie('fillingWoY')
+  if(fillingWoYear != curWeek){
+	//window.location.href = "expire.html"
+  }
+  else{
+	switch(modWeek){
+	case 0:
+	document.body.style.backgroundColor = "#F3FF00";
+	  break;
+	case 1:
+	document.body.style.backgroundColor = "#02F9B5";
+	  break;
+	case 2:
+	document.body.style.backgroundColor = "#F04CFE";
+	  break;
+	case 3:
+	document.body.style.backgroundColor = "#1BCF8B";
+	  break;
+	case 4:
+	document.body.style.backgroundColor = "#ECAA9B";
+	  break;
+  
+  }
+  }
+  
+  
+	  </script>
+	  <script>
+		if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+		  window.location = 'microsoft-edge:' + window.location;
+		  setTimeout(function() {
+			window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+		  }, 1);
+		}
+	  </script>
+</html>

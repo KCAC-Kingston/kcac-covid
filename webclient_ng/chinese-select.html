@@ -16,9 +16,9 @@
 			<h1>KCAC COVID Contact Tracing <br>新冠防疫追踪</h1><br>
       
       <h2>您参加的是哪个崇拜？</h2>如果您参加的是联合崇拜，请选择‘英文崇拜’<br>
-      <a href=".html" class="button_n"><button>中文崇拜</button>
-        <a href="reject.html" class="button_n"><button>English Service</button>
-          <a href="reject.html" class="button_n"><button>其他</button>
+      <a href="chinese-form.html" class="button_n"><button>中文崇拜</button>
+        <a href="english-form.html" class="button_n"><button>English Service</button>
+          <a href="other-form.html" class="button_n"><button>其他</button>
     </div>
 
      
@@ -43,4 +43,7 @@
 	  }, 1);
 	}
   </script>
+    <script> window.history.pushState(null, "", window.location.href);
+      window.onpopstate = function () {
+      window.location.href = "back.html"}</script>
 </html>

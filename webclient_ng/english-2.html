@@ -71,4 +71,7 @@
 	  }, 1);
 	}
   </script>
+    <script> window.history.pushState(null, "", window.location.href);
+		window.onpopstate = function () {
+		window.location.href = "back.html"}</script>
 </html>
